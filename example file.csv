@@ -1,0 +1,7 @@
+﻿product_title,product_price,product_description
+item name 1 x unit size,3,this is a description
+bag of carrots 1x25,10.76,This is a bag of carrots
+bleach 1x500ml,5.76,A bottle of bleach
+orange juice(can) 12x750ml,8.9,Orange juice
+orange juice(bottle) 12x750ml,6.78,Orange juice
+mop,6.45,Example of an item without the need for quantityxunit size. 

@@ -1,0 +1,213 @@
+.customRadio {
+
+    display: flex;
+    flex-direction: column;
+
+    .customRadioItem {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        border-radius: 3px;
+        border: 1px solid #D1D3D4;
+        padding-right: 5px;
+        margin-bottom: 5px;
+
+        //@media(max-width: 1445px) {
+        //    width: 33.33%;
+        //}
+        //
+        //@media(max-width: 1200px) {
+        //    width: 33.33%;
+        //}
+        //
+        //@media(max-width: 690px) {
+        //    width: 50%;
+        //}
+
+        &.withQuantityPicker{
+            @media(max-width: 540px) {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-right: 0px;
+            }
+        }
+
+        //@media(max-width: 540px) {
+        //    display: block;
+        //}
+
+        .rightSide{
+            display: flex;
+            align-items: center;
+
+            &.withQuantityPicker{
+                @media(max-width: 540px) {
+                    width: 100%;
+                    justify-content: space-between;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+
+                    border-top: 1px solid #c2c2c2;
+                    .qty-product{
+
+                    }
+
+                }
+            }
+
+            .price{
+                display: flex;
+                width: auto;
+                font-weight: bolder;
+                color: #000;
+                font-size: 16px;
+                margin: 0;
+
+                &.withQuantityPicker{
+                    margin-left: 10px;
+                }
+            }
+            .qty-product {
+                display: flex;
+
+                .minus-btn, .plus-btn{
+                    background-color: #c2c2c2;
+                }
+            }
+        }
+
+        label {
+            font-weight: normal;
+            flex-grow: 1;
+            //&.withQuantityPicker{
+            //    width: 100%;
+            //}
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+
+            &:empty {
+                display: none;
+
+                ~ label {
+                    position: relative;
+                    text-indent: 3.25em;
+                    padding: 10px 0 0;
+                    margin-bottom: 0;
+                    cursor: pointer;
+                    height: 38px;
+                    user-select: none;
+
+                    &:before {
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        content: '';
+                        width: 2.5em;
+                        padding-top: 10px;
+                        background: #D1D3D4;
+                        border-radius: 3px 0 0 3px;
+                    }
+                }
+            }
+
+            &:hover:not(:checked) ~ label {
+                color: #000;
+                font-weight: bold;
+                padding-top: 10px;
+
+                &:before {
+                    content: '\2714';
+                    text-indent: .9em;
+                    color: #000;
+                }
+            }
+
+            &:checked ~ label {
+                color: #000;
+                font-weight: bold;
+                padding-top: 10px;
+
+                &:before {
+                    content: '\2714';
+                    text-indent: .9em;
+                    color: #333;
+                    background-color: #ccc;
+                }
+            }
+
+            &:focus ~ label:before {
+                box-shadow: 0 0 0 3px #999;
+            }
+        }
+
+
+        &.default {
+            input[type="radio"],
+            input[type="checkbox"] {
+                &:checked ~ label:before {
+                    color: #333;
+                    background-color: #ccc;
+                }
+            }
+        }
+
+        &.primary {
+            input[type="radio"],
+            input[type="checkbox"] {
+                &:checked ~ label:before {
+                    color: #000;
+                    background-color: #FFF400;
+                }
+            }
+        }
+
+
+        &.success {
+            input[type="radio"],
+            input[type="checkbox"] {
+                &:checked ~ label:before {
+                    color: #fff;
+                    background-color: #5cb85c;
+                }
+            }
+        }
+
+        &.danger {
+            input[type="radio"],
+            input[type="checkbox"] {
+                &:checked ~ label:before {
+                    color: #fff;
+                    background-color: #d9534f;
+                }
+            }
+        }
+
+        &.warning {
+            input[type="radio"],
+            input[type="checkbox"] {
+                &:checked ~ label:before {
+                    color: #fff;
+                    background-color: #f0ad4e;
+                }
+            }
+        }
+
+        &.info {
+            input[type="radio"],
+            input[type="checkbox"] {
+                &:checked ~ label:before {
+                    color: #fff;
+                    background-color: #5bc0de;
+                }
+            }
+        }
+
+
+    }
+}
