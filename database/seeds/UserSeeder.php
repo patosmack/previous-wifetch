@@ -14,6 +14,48 @@ class UserSeeder extends Seeder
     public function run()
     {
 
+        $email = 'lily@wifetch.com';
+        if(!User::where('email', '=', $email)->first()){
+            $user = new App\Models\User\User();
+            $user->name = 'Lily Admin';
+            $user->email = $email;
+            $user->home_phone = '4444444';
+            $user->mobile_phone = '12462625075';
+            $user->is_admin = 1;
+            $user->password = \Illuminate\Support\Facades\Hash::make('asd123123');
+            if($user->save()){
+                $this->createDefaultAddress($user, ['country_id' => 1, 'parish_id' => 1]);
+            }
+        }
+
+        $email = 'lily+merchant@wifetch.com';
+        if(!User::where('email', '=', $email)->first()){
+            $user = new App\Models\User\User();
+            $user->name = 'Lily Merchant';
+            $user->email = $email;
+            $user->home_phone = '4444444';
+            $user->mobile_phone = '12462625075';
+            $user->is_merchant = 1;
+            $user->password = \Illuminate\Support\Facades\Hash::make('asd123123');
+            if($user->save()){
+                $this->createDefaultAddress($user, ['country_id' => 1, 'parish_id' => 2]);
+            }
+        }
+
+        $email = 'lily+buyer@wifetch.com';
+        if(!User::where('email', '=', $email)->first()){
+            $user = new App\Models\User\User();
+            $user->name = 'Lily Buyer';
+            $user->email = $email;
+            $user->home_phone = '4444444';
+            $user->mobile_phone = '12462625075';
+            $user->password = \Illuminate\Support\Facades\Hash::make('asd123123');
+            if($user->save()){
+                $this->createDefaultAddress($user, ['country_id' => 1, 'parish_id' => 3]);
+            }
+        }
+
+
         $email = 'patosmack@gmail.com';
         if(!User::where('email', '=', $email)->first()){
             $user = new App\Models\User\User();
@@ -56,6 +98,9 @@ class UserSeeder extends Seeder
         }
 
     }
+
+
+
 
     /**
      * Create a new user instance after a valid registration.
