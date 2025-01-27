@@ -57,6 +57,8 @@ class SyncOriginalDb extends Command
     public function handle()
     {
 
+        set_time_limit(0);
+
 
         if($this->option('mode') === 'production'){
             $this->devMode = false;
