@@ -13,8 +13,6 @@ class OrderBFF {
 //'transit_to_pickup','transit_to_destination','near_destination','delivered'
 //];
 
-
-
     public static function step1Status($order){
         if($order->status === 'payment_approved'){
             return '';
